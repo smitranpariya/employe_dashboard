@@ -13,7 +13,7 @@ A Flask-based RESTful API for managing employees, tracking attendance and perfor
 - 📄 Swagger UI for interactive API docs
 - 🗃️ PostgreSQL database integration
 - 📁 .env configuration for environment variables
-- 📋 Logging support for debugging
+
 
 ---
 
