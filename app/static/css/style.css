@@ -1,0 +1,12 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+#performance-chart {
+    width: 80%;
+    margin: 0 auto;
+}

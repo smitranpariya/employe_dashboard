@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Performance Visualization</title>
+    <script src="https://cdn.jsdelivr.net/npm/plotly.js-dist@2.16.1/plotly.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+<body>
+    <h1>Employee Performance Overview</h1>
+    <div id="performance-chart"></div>
+
+    <script>
+        var data = {{ data | tojson }};  // Flask passes data from backend here
+
+        var trace1 = {
+            x: data.names,
+            y: data.scores,
+            type: 'bar'
+        };
+
+        var layout = {
+            title: 'Employee Performance',
+            xaxis: {
+                title: 'Employee Name'
+            },
+            yaxis: {
+                title: 'Performance Score'
+            }
+        };
+
+        var chartData = [trace1];
+
+        Plotly.newPlot('performance-chart', chartData, layout);
+    </script>
+</body>
+</html>
